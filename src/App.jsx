@@ -1,5 +1,6 @@
 import Galleries from "./components/Galleries";
 import PageFooter from "./components/PageFooter";
+import Profile from "./components/Profile";
 import Settings from "./components/Settings";
 import TopBar from "./components/TopBar";
 
@@ -8,7 +9,8 @@ function App() {
     <>
       <TopBar />
       {/* <Galleries /> */}
-      <Settings />
+      {/* <Settings /> */}
+      <Profile />
       <PageFooter />
     </>
   );
