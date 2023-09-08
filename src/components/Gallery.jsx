@@ -33,8 +33,6 @@ const nextScroll = event => {
   }
 };
 
-window.onload = () => {};
-
 class Gallery extends Component {
   state = {
     isLoading: true,
@@ -88,14 +86,19 @@ class Gallery extends Component {
               <img src={show.Poster} className="carousel-item d-block me-1" alt={show.Title} key={show.imdbID} />
             ))}
           </div>
-          <button variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
-            <span className="carousel-control-prev-icon bg-secondary h-25" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" onClick={nextScroll}>
-            <span className="carousel-control-next-icon bg-secondary h-25" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
+
+          {!this.state.isLoading && !this.state.hasError && (
+            <>
+              <button variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
+                <span className="carousel-control-prev-icon bg-secondary h-25" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" onClick={nextScroll}>
+                <span className="carousel-control-next-icon bg-secondary h-25" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </>
+          )}
         </div>
       </>
     );
