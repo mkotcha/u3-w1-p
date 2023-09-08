@@ -1,5 +1,10 @@
+.preview-container {
+  overflow-x: hidden;
+}
+
 .preview-container2 img {
   width: 250px;
+  /* height: 100%; */
   cursor: pointer;
 }
 
@@ -12,4 +17,16 @@
 .navbar .dropdown-menu {
   position: absolute;
   left: -110px;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+header div div a.view-box:hover {
+  border: 1px solid white !important;
+}
+
+header div div a.view-box i:hover {
+  color: white;
 }

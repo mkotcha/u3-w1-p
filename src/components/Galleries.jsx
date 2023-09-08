@@ -14,7 +14,7 @@ const Galleries = () => {
             <Dropdown.Item href="index.html">Porn</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <div className="d-flex ms-auto align-items-center">
+        <div className="d-flex ms-auto align-items-center d-none d-sm-block">
           <a className="text-secondary view-box" href="index.html">
             <i className="bi bi-text-left border px-3 py-1"></i>
           </a>
@@ -25,7 +25,7 @@ const Galleries = () => {
       </Container>
       <Gallery show="Star Trek" />
       <Gallery show="Star Wars" />
-      <Gallery show="Fast and Furious" />
+      <Gallery show="Doctor Who" />
     </>
   );
 };

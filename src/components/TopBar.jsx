@@ -2,7 +2,7 @@ import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const TopBar = () => {
   return (
-    <>
+    <header>
       <Navbar expand="lg" className="mb-4">
         <Container fluid className="ps-md-5">
           <Navbar.Brand href="index.html">
@@ -25,13 +25,13 @@ const TopBar = () => {
 
           <Nav className="ms-auto me-2 d-flex flex-row flex-nowrap align-items-center  ">
             <Nav.Link href="index.html">
-              <i className="bi bi-search me-4"></i>
+              <i className="bi bi-search me-4 me-lg-0"></i>
             </Nav.Link>
-            <Nav.Link className="d-none d-sm-block me-4 fs-7 fw-bold" href="index.html">
+            <Nav.Link className="d-none d-sm-block me-4 me-lg-0 fs-7 fw-bold" href="index.html">
               KIDS
             </Nav.Link>
             <Nav.Link>
-              <i className="bi bi-bell-fill me-4"></i>
+              <i className="bi bi-bell-fill me-4 me-lg-0 "></i>
             </Nav.Link>
 
             <NavDropdown
@@ -48,7 +48,7 @@ const TopBar = () => {
           <Navbar.Toggle aria-controls="right-navbar-nav" aria-expanded="false" aria-label="Toggle navigation" />
         </Container>
       </Navbar>
-    </>
+    </header>
   );
 };
 export default TopBar;
