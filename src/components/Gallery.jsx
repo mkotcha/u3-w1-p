@@ -1,34 +1,35 @@
 import { Component } from "react";
-import { Alert, Button, Spinner } from "react-bootstrap";
+import { Alert, Spinner } from "react-bootstrap";
 
-// let carouselWidth = document.querySelector(".carousel-inner").scrollWidth;
-let cardWidth = 305;
-// console.log(carouselWidth, cardWidth);
+const cardWidth = 305;
 
-let scrollPosition = 0;
+const normalize = position => {
+  if (!isNaN(position)) {
+    position = 0;
+  } else {
+    position = parseInt(position);
+  }
+  return position;
+};
 
 const prevScroll = event => {
-  let left = event.target.closest("div").querySelector(".carousel-inner").style.left;
-  if (!isNaN(left)) left = 0;
-  else left = parseInt(left);
-  console.log(left);
+  const container = event.target.closest("div").querySelector(".carousel-inner");
+  let left = normalize(container.style.left);
   if (left < 0) {
     let pos = left + cardWidth;
-    event.target.closest("div").querySelector(".carousel-inner").style.left = pos + "px";
+    container.style.left = pos + "px";
   }
 };
 
 const nextScroll = event => {
-  const numCard = event.target.closest("div").querySelectorAll("img").length;
-  const width = event.target.closest("div").offsetWidth;
-  let left = event.target.closest("div").querySelector(".carousel-inner").style.left;
-  if (!isNaN(left)) left = 0;
-  else left = parseInt(left);
-  console.log(event.target.closest("div").querySelectorAll("img").length);
-  console.log(Math.abs(left));
+  const parentContainer = event.target.closest("div");
+  const container = parentContainer.querySelector(".carousel-inner");
+  const numCard = parentContainer.querySelectorAll("img").length;
+  const width = parentContainer.offsetWidth;
+  let left = normalize(container.style.left);
   if (Math.abs(left) < numCard * cardWidth - width) {
     let pos = left - cardWidth;
-    event.target.closest("div").querySelector(".carousel-inner").style.left = pos + "px";
+    parentContainer.querySelector(".carousel-inner").style.left = pos + "px";
   }
 };
 
@@ -44,13 +45,12 @@ class Gallery extends Component {
 
   fetchShow = async query => {
     const url = new URL("https://www.omdbapi.com/?apikey=468924f2&s=" + query);
-    // console.log(url.href);
 
     this.setState({ isLoading: true });
-    console.log("FETCH shows");
+
     try {
       const response = await fetch(url);
-      console.log(response.ok);
+
       if (response.ok) {
         const data = await response.json();
 
@@ -61,23 +61,17 @@ class Gallery extends Component {
           this.setState({ shows: [] });
         }
       } else {
-        console.log("setState hasError: true");
         this.setState({ hasError: true, error: response.status });
       }
     } catch (error) {
-      console.log("erroraccio: ", error);
       this.setState({ hasError: true, error: { error } });
     } finally {
-      // il metodo finally verrà eseguito SEMPRE e IN OGNI CASO, torna utile per qualcosa che debba avvenire sempre e comunque (sia in condizioni positive che negative)
       this.setState({ isLoading: false });
     }
   };
 
   componentDidMount = () => {
-    // console.log("COMPONENT DID MOUNT");
     this.fetchShow(this.props.show);
-    // document.querySelector(".carousel-control-next").addEventListener("click", nextScroll);
-    // document.querySelector(".carousel-control-prev").addEventListener("click", prevScroll);
   };
 
   render() {
@@ -94,7 +88,7 @@ class Gallery extends Component {
               <img src={show.Poster} className="carousel-item d-block me-1" alt={show.Title} key={show.imdbID} />
             ))}
           </div>
-          <button as="a" variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
+          <button variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
             <span className="carousel-control-prev-icon bg-secondary h-25" aria-hidden="true"></span>
             <span className="visually-hidden">Previous</span>
           </button>
