@@ -3,9 +3,9 @@ import Gallery from "./Gallery";
 const Galleries = () => {
   return (
     <>
-      <Gallery show="star trek" />
-      <Gallery show="star wars" />
-      <Gallery show="rick & morty" />
+      <Gallery show="Star Trek" />
+      <Gallery show="Star Wars" />
+      <Gallery show="Fast and Furious" />
     </>
   );
 };
