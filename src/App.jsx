@@ -8,9 +8,9 @@ function App() {
   return (
     <>
       <TopBar />
-      {/* <Galleries /> */}
+      <Galleries />
       {/* <Settings /> */}
-      <Profile />
+      {/* <Profile /> */}
       <PageFooter />
     </>
   );

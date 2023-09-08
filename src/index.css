@@ -1,32 +1,15 @@
-.preview-container {
-  overflow-x: hidden;
-  img {
-    width: 250px;
-  }
-}
-
-.preview-container2 {
-  img {
-    width: 250px;
-    cursor: pointer;
-  }
-}
-
-header div div a.view-box {
-  &:hover {
-    border: 1px solid white !important;
-  }
-  i:hover {
-    color: white;
-  }
+.preview-container2 img {
+  width: 250px;
+  cursor: pointer;
 }
 
 .carousel-inner {
   left: 0;
-
   overflow: visible;
   transition: left 1s;
 }
-.carousel {
-  overflow: hidden;
+
+.navbar .dropdown-menu {
+  position: absolute;
+  left: -110px;
 }

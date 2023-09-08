@@ -27,7 +27,7 @@ const TopBar = () => {
             <Nav.Link href="index.html">
               <i className="bi bi-search me-4"></i>
             </Nav.Link>
-            <Nav.Link className="me-4 fs-7 fw-bold" href="index.html">
+            <Nav.Link className="d-none d-sm-block me-4 fs-7 fw-bold" href="index.html">
               KIDS
             </Nav.Link>
             <Nav.Link>
@@ -35,6 +35,7 @@ const TopBar = () => {
             </Nav.Link>
 
             <NavDropdown
+              direction="start"
               href="index.html"
               aria-expanded="false"
               title={<img src="assets/imgs/avatar.png" alt="" width="32px" />}>

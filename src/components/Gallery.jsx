@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Alert, Spinner } from "react-bootstrap";
 
-const cardWidth = 305;
+const cardWidth = 254;
 
 const normalize = position => {
   if (!isNaN(position)) {
