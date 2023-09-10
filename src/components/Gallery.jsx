@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Alert, Spinner } from "react-bootstrap";
+import { Alert, Spinner, Container } from "react-bootstrap";
 
 const cardWidth = 254;
 
@@ -75,7 +75,9 @@ class Gallery extends Component {
   render() {
     return (
       <>
-        <h5 className="fw-bold mb-3 ps-md-5">{this.props.show}</h5>
+        <Container fluid className="ps-md-5 mb-3">
+          <h5 className="fw-bold">{this.props.show}</h5>
+        </Container>
         <div id="carouselExample" className="carousel slide ps-md-5 mb-5 d-relative" data-ride="carousel">
           {this.state.isLoading && <Spinner animation="border" variant="danger" />}
 

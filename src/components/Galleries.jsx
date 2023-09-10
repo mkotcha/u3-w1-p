@@ -4,8 +4,8 @@ import Gallery from "./Gallery";
 const Galleries = () => {
   return (
     <>
-      <Container fluid className="ps-md-5 d-flex mb-4">
-        <h3 className="fw-bold me-3">TV Shows</h3>
+      <Container fluid className="ps-md-5 d-flex align-items-center mb-4">
+        <h3 className="fw-bold me-3 mb-0">TV Shows</h3>
         <Dropdown>
           <Dropdown.Toggle variant="border-secondary text-white btn-outline-secondary ">Genres</Dropdown.Toggle>
           <Dropdown.Menu>
