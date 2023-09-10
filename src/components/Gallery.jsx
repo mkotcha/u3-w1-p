@@ -91,7 +91,7 @@ class Gallery extends Component {
 
           {!this.state.isLoading && !this.state.hasError && (
             <>
-              <Button variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
+              <Button variant="secondary" className="carousel-control-prev text-white" onClick={prevScroll}>
                 <span className="carousel-control-prev-icon bg-secondary h-25" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
               </Button>

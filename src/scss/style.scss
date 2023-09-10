@@ -30,19 +30,20 @@ div div a.view-box i:hover {
   color: white;
 }
 
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
+.carousel-control-prev,
+.carousel-control-next {
   opacity: 0.5;
-}
-.carousel-control-prev:hover,
-.carousel-control-next:hover {
-  background-color: transparent;
-  opacity: 0.8;
-}
-
-.carousel-control-prev:active,
-.carousel-control-next:active {
-  background-color: transparent !important;
+  &:focus {
+    opacity: 0.5;
+  }
+  &:hover {
+    background-color: transparent;
+    opacity: 0.8;
+  }
+  &:active {
+    background-color: transparent !important;
+    opacity: 0.5;
+  }
 }
 
 @include media-breakpoint-down(md) {
