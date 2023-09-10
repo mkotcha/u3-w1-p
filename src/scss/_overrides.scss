@@ -1,25 +1,93 @@
 @import "../../node_modules/bootstrap/scss/functions";
 
-$forth: #242424;
-$fifth: #232323;
-$sixth: #535353;
-$sub: #b3b3b3;
+$body-bg-dark: #141414;
+$secondary: #808080;
+$dark: #333333;
+$black: $body-bg-dark;
+$info: #dfdfdf;
 
 $custom-colors: (
-  "forth": $forth,
-  "fifth": $fifth,
-  "nero": #050505,
-  "sisth": $sixth,
-  "sub": $sub,
+  "secodary": $secondary,
+  "dark": $dark,
+  "black": $black,
+  "info": $info,
 );
 
+$custom-display-font-sizes: (
+  7: 2rem,
+  8: 1.5rem,
+  9: 1rem,
+);
+
+$font-size-base: 1rem;
+
+$h7-font-size: $font-size-base * 0.75;
+$h8-font-size: $font-size-base * 0.65;
+$h9-font-size: $font-size-base * 0.5;
+
+$custom-font-sizes: (
+  7: $h7-font-size,
+  8: $h8-font-size,
+  9: $h9-font-size,
+);
+
+$spacer: 1rem;
+
+$custom-spacers: (
+  6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
+  9: $spacer * 11,
+  10: $spacer * 17,
+  11: $spacer * 25,
+);
+
+$form-check-input-width: 20px;
+$form-check-input-border-radius: 0;
+$form-check-input-width: 2em;
+// $form-check-min-height: 30px;
+$form-check-input-bg: transparent;
+$form-check-input-checked-bg-color: transparent;
+$form-check-input-checked-border-color: $secondary;
+$form-check-input-focus-border: $secondary;
+$form-check-input-focus-box-shadow: none;
+
+$carousel-control-color: black;
+
+// Container padding
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
 $btn-border-radius: 0;
+
+// Source mixin
+$container-padding-x: $grid-gutter-width;
+@mixin make-container($padding-x: $container-padding-x) {
+  max-width: 550px;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+// Usage
+.netflix-container {
+  @include make-container();
+}
+
+.carousel-item-next:not(.carousel-item-start),
+.active.carousel-item-end {
+  transform: translateX(50%);
+}
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
 @import "../../node_modules/bootstrap/scss/maps";
 
 //merge
+$display-font-sizes: map-merge($display-font-sizes, $custom-display-font-sizes);
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+$spacers: map-merge($spacers, $custom-spacers);
 
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
