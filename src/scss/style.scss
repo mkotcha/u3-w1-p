@@ -30,6 +30,21 @@ div div a.view-box i:hover {
   color: white;
 }
 
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  opacity: 0.5;
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: transparent;
+  opacity: 0.8;
+}
+
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  background-color: transparent !important;
+}
+
 @include media-breakpoint-down(md) {
   .carousel-control-prev {
     justify-content: start;

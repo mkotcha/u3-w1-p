@@ -45,7 +45,12 @@ const TopBar = () => {
               <NavDropdown.Item href="index.html">Something else here</NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Navbar.Toggle aria-controls="right-navbar-nav" aria-expanded="false" aria-label="Toggle navigation" />
+          <Navbar.Toggle
+            variant="secondary"
+            aria-controls="right-navbar-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          />
         </Container>
       </Navbar>
     </header>

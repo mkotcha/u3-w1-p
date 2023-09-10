@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Alert, Spinner, Container } from "react-bootstrap";
+import { Alert, Spinner, Container, Button } from "react-bootstrap";
 
 const cardWidth = 254;
 
@@ -91,14 +91,14 @@ class Gallery extends Component {
 
           {!this.state.isLoading && !this.state.hasError && (
             <>
-              <button variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
+              <Button variant="secondary" className="carousel-control-prev" onClick={prevScroll}>
                 <span className="carousel-control-prev-icon bg-secondary h-25" aria-hidden="true"></span>
                 <span className="visually-hidden">Previous</span>
-              </button>
-              <button className="carousel-control-next" type="button" onClick={nextScroll}>
+              </Button>
+              <Button className="carousel-control-next" type="button" onClick={nextScroll}>
                 <span className="carousel-control-next-icon bg-secondary h-25" aria-hidden="true"></span>
                 <span className="visually-hidden">Next</span>
-              </button>
+              </Button>
             </>
           )}
         </div>
