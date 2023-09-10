@@ -1,0 +1,34 @@
+@import "./overrides";
+
+.preview-container {
+  overflow-x: hidden;
+}
+
+.preview-container2 img {
+  width: 250px;
+  /* height: 100%; */
+  cursor: pointer;
+}
+
+.carousel-inner {
+  left: 0;
+  overflow: visible;
+  transition: left 1s;
+}
+
+.navbar .dropdown-menu {
+  position: absolute;
+  left: -110px;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+header div div a.view-box:hover {
+  border: 1px solid white !important;
+}
+
+header div div a.view-box i:hover {
+  color: white;
+}

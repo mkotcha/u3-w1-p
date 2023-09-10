@@ -1,7 +1,7 @@
 const Settings = () => {
   return (
     <main data-bs-theme="light">
-      <div className="container px-md-6 px-lg-8 px-xl-9">
+      <div className="container px-md-6 px-lg-8 px-xl-9" data-bs-theme="light">
         <h2>Account</h2>
         <hr />
         <div className="d-flex flex-column flex-md-row fs-7">

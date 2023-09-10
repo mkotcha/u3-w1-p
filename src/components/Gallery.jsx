@@ -62,7 +62,7 @@ class Gallery extends Component {
         this.setState({ hasError: true, error: response.status });
       }
     } catch (error) {
-      this.setState({ hasError: true, error: { error } });
+      this.setState({ hasError: true, error });
     } finally {
       this.setState({ isLoading: false });
     }

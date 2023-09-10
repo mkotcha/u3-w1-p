@@ -9,7 +9,7 @@ function App() {
     <>
       <TopBar />
       <Galleries />
-      {/* <Settings /> */}
+      <Settings />
       {/* <Profile /> */}
       <PageFooter />
     </>
