@@ -32,3 +32,12 @@ header div div a.view-box:hover {
 header div div a.view-box i:hover {
   color: white;
 }
+
+@include media-breakpoint-down(md) {
+  .carousel-control-prev {
+    justify-content: start;
+  }
+  .carousel-control-next {
+    justify-content: end;
+  }
+}

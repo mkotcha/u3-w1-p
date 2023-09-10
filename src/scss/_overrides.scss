@@ -78,6 +78,7 @@ $container-padding-x: $grid-gutter-width;
 .carousel-item-next:not(.carousel-item-start),
 .active.carousel-item-end {
   transform: translateX(50%);
+  background-color: red;
 }
 
 @import "../../node_modules/bootstrap/scss/variables";
@@ -93,5 +94,44 @@ $spacers: map-merge($spacers, $custom-spacers);
 @import "../../node_modules/bootstrap/scss/utilities";
 
 // utilities-merge
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          values: map-merge(map-get(map-get($utilities, "color"), "values"), ($custom-colors)),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          values: map-merge(map-get(map-get($utilities, "background-color"), "values"), ($custom-colors)),
+        )
+      ),
+  )
+);
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "text-color":
+      map-merge(
+        map-get($utilities, "text-color"),
+        (
+          values: map-merge(map-get(map-get($utilities, "text-color"), "values"), ($custom-colors)),
+        )
+      ),
+  )
+);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
