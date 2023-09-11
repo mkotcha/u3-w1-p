@@ -41,7 +41,7 @@ class Gallery extends Component {
     shows: [],
   };
 
-  fetchShow = async query => {
+  fetchShows = async query => {
     const url = new URL("https://www.omdbapi.com/?apikey=468924f2&s=" + query);
 
     this.setState({ isLoading: true });
@@ -69,7 +69,11 @@ class Gallery extends Component {
   };
 
   componentDidMount = () => {
-    this.fetchShow(this.props.show);
+    this.fetchShows(this.props.show);
+  };
+
+  componentDidUpdate = prevProps => {
+    if (prevProps.show !== this.props.show) this.fetchShows(this.props.show);
   };
 
   render() {

@@ -32,6 +32,8 @@ div div a.view-box i:hover {
 
 .carousel-control-prev,
 .carousel-control-next {
+  max-width: 150px;
+  min-width: 128px;
   opacity: 0.5;
   &:focus {
     opacity: 0.5;
